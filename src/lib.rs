@@ -22,13 +22,24 @@ pub fn min(a: &[Value]) -> Option<Value> {
         return None;
     }
     let mut m = a[0];
-    for x in &a[1..] {
-        if *x < m {
-            m = *x;
+    for &x in &a[1..] {
+        if x < m {
+            m = x;
         }
     }
     Some(m)
 }
+
+/*
+struct S {
+    x: u32,
+    y: u32,
+    z: u32,
+}
+
+pub fn f({x, y, ...}: S) {
+}
+*/
 
 #[test]
 fn test_max() {
